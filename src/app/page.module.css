@@ -1,0 +1,9 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  min-width: 100svw;
+  font-family: var(--font-geist-sans);
+}
