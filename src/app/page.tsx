@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import TodoPage from "@/pages/Todo.page";
+import TodoPage from "@/app/todo/Todo.page";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "@/theme";
 import { store } from "@/store/store";
