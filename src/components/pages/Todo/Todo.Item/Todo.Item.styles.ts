@@ -7,7 +7,7 @@ type StatusProps = {
 export const Container = styled("div")`
   grid-template-columns: 0.3fr 0.3fr 2fr 1fr 1fr;
   justify-items: start;
-  align-items: center;
+  align-items: start;
   min-height: 40px;
   width: 100%;
   display: grid;
@@ -50,6 +50,7 @@ export const Status = styled.div<StatusProps>`
   position: absolute;
   text-wrap: nowrap;
   padding: 4px 8px;
+  top: -4px;
   border-radius: 12px;
   background-color: ${({ status }) => {
     switch (status) {
