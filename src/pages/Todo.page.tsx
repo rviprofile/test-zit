@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { useSelector } from "react-redux";
 
-export const TodoPage = () => {
+const TodoPage = () => {
   const [defaultValues, setDefaultValues] = useState<TodoFormValues>({
     todos: {},
   });
@@ -45,3 +45,5 @@ export const TodoPage = () => {
     </FormProvider>
   );
 };
+
+export default TodoPage;
