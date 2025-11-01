@@ -1,3 +1,4 @@
+"use client"
 import { MainContaner } from "@/components/common/MainContaner/MainContaner";
 import {
   TodoHeader,
@@ -37,7 +38,6 @@ const TodoPage = () => {
     <FormProvider {...formProviderProps}>
       <MainContaner>
         <TodoHeader />
-
         <TodoInput />
         <TodoList list={todos} />
         <TodoActions />
