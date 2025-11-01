@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import * as S from "./Checkbox.styles";
 import { useFormContext } from "react-hook-form";
@@ -11,6 +12,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ name, ...props }, ref) => {
     const { register, watch } = useFormContext();
     const isChecked = watch(name);
+    const safeChecked = typeof isChecked === "boolean" ? isChecked : false;
 
     return (
       <S.StyledCheckbox
@@ -24,7 +26,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             else ref.current = e;
           }
         }}
-        checked={isChecked}
+        checked={safeChecked}
         disabled={props.disabled}
       />
     );

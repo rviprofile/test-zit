@@ -19,3 +19,10 @@ export const Header = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.palette.primary};
   color: ${({ theme }) => theme.palette.primary};
 `;
+
+export const EmptyState = styled.div`
+  text-align: start;
+  padding: 12px;
+  color: ${({ theme }) => theme.palette.text};
+  opacity: 0.6;
+`;

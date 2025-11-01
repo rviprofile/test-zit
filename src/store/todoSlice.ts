@@ -35,7 +35,6 @@ const todosSlice = createSlice({
     addTodo: (state, action: PayloadAction<{ text: string }>) => {
       const newItem: TypeTodoItem = {
         id: new Date().getTime().toString(),
-        order: state.list.length + 1,
         text: action.payload.text,
         status: "IN_PROGRESS",
         date: new Date().toISOString(),
@@ -45,17 +44,16 @@ const todosSlice = createSlice({
     },
     updateStatus: (
       state,
-      action: PayloadAction<{ order: number; status: TypeTodoItem["status"] }>
+      action: PayloadAction<{ id: string; status: TypeTodoItem["status"] }>
     ) => {
-      const item = state.list.find((t) => t.order === action.payload.order);
+      const item = state.list.find((t) => t.id === action.payload.id);
       if (item) {
         item.status = action.payload.status;
         saveToLocalStorage(state.list);
       }
     },
-    deleteTodo: (state, action: PayloadAction<{ order: number }>) => {
-      state.list = state.list.filter((t) => t.order !== action.payload.order);
-      state.list.forEach((t, i) => (t.order = i + 1));
+    deleteTodo: (state, action: PayloadAction<{ id: string }>) => {
+      state.list = state.list.filter((t) => t.id !== action.payload.id);
       saveToLocalStorage(state.list);
     },
     reorderTodos: (state, action: PayloadAction<TypeTodoItemList>) => {
